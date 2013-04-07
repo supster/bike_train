@@ -1,0 +1,10 @@
+<% provide(:title, 'Home')%>  
+<div class="center">
+	<h1>Bike Train</h1>
+	
+	<h3>
+		Make bike riding awesome.   
+	</h3>
+	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" if !signed_in?%>
+	
+</div>
