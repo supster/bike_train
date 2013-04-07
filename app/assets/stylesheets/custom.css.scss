@@ -31,11 +31,21 @@ input, textarea, select, .uneditable-input {
 
 
 #bg {
-  position: fixed; 
+  position: relative;
   top: 0; 
   left: 0; 
-  
+  background-image:url('/assets/biketrain_photo.jpg');
+
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
 }
+
+.signup_box {
+  background-color: white;
+  width: 500px;
+  height: 300px;
+}
+
+.trip_map_canvas{height:300px;width:750px;}
+.noshow{visibility:hidden;height:0px;width:0px;}

@@ -1,0 +1,1162 @@
+<% provide(:title, 'Home')%>  
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr"><head>
+<title>My Trip - Specify your commuting profile and schedule to find other people with similar routes.</title>
+<link rel="stylesheet" type="text/css" href="style2013.css" />
+<link type="text/css" href="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/themes/base/jquery.ui.all.css" rel="stylesheet" />
+<link type="text/css" href="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/css/custom-theme/jquery-ui-1.8.12.custom.css" rel="stylesheet" />
+<link rel="shortcut icon" href="http://www.carpoolworld.com/favicon.ico" type="image/x-icon" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Find your perfect carpool to work or for a trip. FREE. Start a website for your group!" />
+<meta name="keywords" content="carpool,rideshare,vanpool,liftshare,carshare,trips,ride,carpooling,commute,website" />
+<meta name="geo.position" content="40.788118;-73.533067" />
+<meta name="geo.placename" content="Jericho, New York" />
+<meta name="geo.country" content="US" />
+
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/jquery-1.5.1.js"></script>  
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/ui/jquery.ui.widget.js"></script> 
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/ui/jquery.ui.mouse.js"></script> 
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/ui/jquery.ui.datepicker.js"></script> 
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/ui/jquery.effects.core.js"></script>
+<script type="text/javascript" src="http://www.carpoolworld.com/jquery-ui-1.8.12.custom/development-bundle/ui/jquery.effects.bounce.js"></script>
+<script  type="text/javascript" src="http://www.carpoolworld.com/trips_form.js"></script>
+<script  type="text/javascript" src="http://www.carpoolworld.com/boxover.js">
+</script>
+
+
+
+<script  type="text/javascript">
+<!--
+
+
+$(function() {
+	
+$("#onetime").hide();
+$("#regular").hide();
+
+$("#mapcontainer").hide();$( "#datepicker" ).datepicker({
+	numberOfMonths: 1,
+	changeMonth: true,
+	changeYear: true,
+	showButtonPanel: true,
+	altField: "#trip_date_yymmdd",
+	altFormat: "yy-mm-dd",
+	dateFormat: "yy-mm-dd"
+		});
+	});
+
+	
+	
+// -->
+</script>
+
+
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/1101728/trips_form_top', [728, 90], 'div-gpt-ad-1358184260519-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/menu.js"></script>
+</head>
+<body  id="container_body"><div id="fb-root"></div>
+<script  type="text/javascript">
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '121054607923167', // App ID
+      channelUrl : '//www.carpoolworld.com/facebook_channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      oauth      : true, // enable OAuth 2.0
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     d.getElementsByTagName('head')[0].appendChild(js);
+   }(document));
+</script>
+
+
+
+<div  id="container">
+<div class="padding_030" >
+
+
+<div class="cell_910 margin_b10">
+
+
+
+ </div></div><div  class="medium_color  cell_910 margin_b10"><h1  class="nomargin middle padding_p5">My trip</h1></div><div class="cell_900 main_border  main_color" > 
+<form action="/trips_form.html" method="post" name="fcoor" ><!--<h2>Contact:</h2>
+
+<div class="cell_750 with_border"><div class="row">
+      <span class="cell_150">Email address:</span>
+	  <span class="cell_400"  title="header=[Email address] body=[Required. We keep your information private, including your email address, it will only be disclosed when you contact other travelers by email to organize carpools. We send periodic match-lists and reminders by email, you can decide at any time to discontinue the reminders and match-lists.]"><input type="text" class="w350" name="form_email" value="" title="Email address"  maxlength="70" onchange="return validate_email()" 	  /> </span>
+	  <span class="cell_200 small_10">Required Private</span>
+<span class="cell_700 small_10">We require a valid email address. Your registration confirmation code will be sent to this address. We will not disclose your email address and we will not send you spam. <a href="http://localhost:8888/legal.html" target="Privacy">Your privacy.</a></span>	  
+</div>
+</div>-->
+<div class="spacer">
+</div><h2>From trip origin:</h2>
+<div class="cell_750 with_border">
+
+<div class="row">
+<span class="cell_150" title="header=[Street:] body=[Optional and private. We use this street address only for geocoding purpose. Please specify your trip starting location (origin) this can be your home street, street corner or any major street in your neighborhood.  Ex:123 Blueberry dr. Strawberry ave. &amp; 48th Mulberry st.]">
+		Street:</span>
+<span class="cell_400"><input type="text" placeholder="" name="home_street"  value="" title="Street:" class="w350" maxlength="53"  id="home_street" /> </span>
+		<span class="cell_200 small_10">Optional Private</span>
+		</div><div class="row">
+<span class="cell_150">City:</span>
+<span class="cell_400"><input type="text" name="home_city" id="home_city" value="" title="City:" class="w350" maxlength="70"  onchange="codeAddress_start()" /> </span>
+<span class="cell_200 small_10">Required Visible</span>
+</div><div class="row"><span class="cell_150">State/Province:</span>
+<span class="cell_400"><input type="text" name="home_state_prov" id="home_state_prov" value="" title="State/Province" size="3" maxlength="3"  onchange="codeAddress_start()" /> Zip/Postal:
+		<input type="text" name="home_postal_zip" id="home_postal_zip" value="" title="Zip/Postal:" size="15" maxlength="15"  onchange="codeAddress_start()"  /></span></span>
+<span class="cell_200 small_10">Optional Visible</span></div><div class="row ">
+<span class="cell_150">Country:</span>
+<span class="cell_400">
+			<select name="home_country" id="home_country" class="w350" onchange="codeAddress_start()" 
+			><option value="">Select your country from the list</option>
+<option value="AFG,AF">AFGHANISTAN
+	</option><option value="ALB,AL">ALBANIA
+	</option><option value="DZA,DZ">ALGERIA
+	</option><option value="ASM,AS">AMERICAN SAMOA
+	</option><option value="AND,AD">ANDORRA
+	</option><option value="AGO,AO">ANGOLA
+	</option><option value="AIA,AI">ANGUILLA
+	</option><option value="ATA,AQ">ANTARCTICA
+	</option><option value="ATG,AG">ANTIGUA AND BARBUDA
+	</option><option value="ARG,AR">ARGENTINA
+	</option><option value="ARM,AM">ARMENIA
+	</option><option value="ABW,AW">ARUBA
+	</option><option value="AUS,AU">AUSTRALIA
+	</option><option value="AUT,AT">AUSTRIA
+	</option><option value="AZE,AJ">AZERBAIJAN
+	</option><option value="BHS,BS">BAHAMAS
+	</option><option value="BHR,BH">BAHRAIN
+	</option><option value="BGD,BD">BANGLADESH
+	</option><option value="BRB,BB">BARBADOS
+	</option><option value="BLR,BY">BELARUS
+	</option><option value="BEL,BE">BELGIUM
+	</option><option value="BLZ,BZ">BELIZE
+	</option><option value="BEN,BJ">BENIN
+	</option><option value="BMU,BM">BERMUDA
+	</option><option value="BTN,BT">BHUTAN
+	</option><option value="BOL,BO">BOLIVIA
+	</option><option value="BIH,BA">BOSNIA AND HERZEGOWINA
+	</option><option value="BWA,BW">BOTSWANA
+	</option><option value="BVT,BV">BOUVET ISLAND
+	</option><option value="BRA,BR">BRAZIL
+	</option><option value="IOT,IO">BRITISH INDIAN OCEAN TERRITORY
+	</option><option value="BRN,BN">BRUNEI DARUSSALAM
+	</option><option value="BGR,BG">BULGARIA
+	</option><option value="BFA,BF">BURKINA FASO
+	</option><option value="BDI,BI">BURUNDI
+	</option><option value="BYE,BY">BYELORUSSIA
+	</option><option value="KHM,KH">CAMBODIA
+	</option><option value="CMR,CM">CAMEROON
+	</option><option value="CAN,CA">CANADA
+	</option><option value="CPV,CV">CAPE VERDE
+	</option><option value="CYM,KY">CAYMAN ISLANDS
+	</option><option value="CAF,CF">CENTRAL AFRICAN REPUBLIC
+	</option><option value="TCD,TD">CHAD
+	</option><option value="CHL,CL">CHILE
+	</option><option value="CHN,CN">CHINA
+	</option><option value="CXR,CX">CHRISTMAS ISLAND
+	</option><option value="CCK,CC">COCOS ISLANDS KEELING
+	</option><option value="COL,CO">COLOMBIA
+	</option><option value="COM,KM">COMOROS
+	</option><option value="COG,CG">CONGO
+	</option><option value="COD,ZR">CONGO THE DEMOCRATIC REPUBLIC OF THE
+	</option><option value="COK,CK">COOK ISLANDS
+	</option><option value="CRI,CR">COSTA RICA
+	</option><option value="HRV,HR">CROATIA Hrvatska
+	</option><option value="CUB,CU">CUBA
+	</option><option value="CYP,CY">CYPRUS
+	</option><option value="CZE,CZ">CZECH REPUBLIC
+	</option><option value="DNK,DK">DENMARK
+	</option><option value="DJI,DJ">DJIBOUTI
+	</option><option value="DMA,DM">DOMINICA
+	</option><option value="DOM,DO">DOMINICAN REPUBLIC
+	</option><option value="TMP,TP">EAST TIMOR
+	</option><option value="ECU,EC">ECUADOR
+	</option><option value="EGY,EG">EGYPT
+	</option><option value="SLV,SV">EL SALVADOR
+	</option><option value="GNQ,GQ">EQUATORIAL GUINEA
+	</option><option value="ERI,ER">ERITREA
+	</option><option value="EST,EE">ESTONIA
+	</option><option value="ETH,ET">ETHIOPIA
+	</option><option value="FLK,FK">FALKLAND ISLANDS Malvinas
+	</option><option value="FRO,FO">FAROE ISLANDS
+	</option><option value="FJI,FJ">FIJI
+	</option><option value="FIN,FI">FINLAND
+	</option><option value="FRA,FR">FRANCE
+	</option><option value="GUF,GF">FRENCH GUIANA
+	</option><option value="PYF,PF">FRENCH POLYNESIA
+	</option><option value="ATF,TF">FRENCH SOUTHERN TERRITORIES
+	</option><option value="GAB,GA">GABON
+	</option><option value="GMB,GM">GAMBIA
+	</option><option value="GEO,GE">GEORGIA
+	</option><option value="DEU,DE">GERMANY
+	</option><option value="GHA,GH">GHANA
+	</option><option value="GIB,GI">GIBRALTAR
+	</option><option value="GRC,GR">GREECE
+	</option><option value="GRL,GL">GREENLAND
+	</option><option value="GRD,GD">GRENADA
+	</option><option value="GLP,GP">GUADELOUPE
+	</option><option value="GUM,GU">GUAM
+	</option><option value="GTM,GT">GUATEMALA
+	</option><option value="GIN,GN">GUINEA
+	</option><option value="GNB,GW">GUINEA-BISSAU
+	</option><option value="GUY,GY">GUYANA
+	</option><option value="HTI,HT">HAITI
+	</option><option value="HMD,HM">HEARD AND MC DONALD ISLANDS
+	</option><option value="VAT,VA">HOLY SEE VATICAN CITY STATE
+	</option><option value="HND,HN">HONDURAS
+	</option><option value="HKG,HK">HONG KONG
+	</option><option value="HUN,HU">HUNGARY
+	</option><option value="ISL,IS">ICELAND
+	</option><option value="IND,IN">INDIA
+	</option><option value="IDN,ID">INDONESIA
+	</option><option value="IRN,IR">IRAN
+	</option><option value="IRQ,IQ">IRAQ
+	</option><option value="IRL,IE">IRELAND
+	</option><option value="ISR,IL">ISRAEL
+	</option><option value="ITA,IT">ITALY
+	</option><option value="CIV,CI">IVORY COAST REPUBLIC OF THE
+	</option><option value="JAM,JM">JAMAICA
+	</option><option value="JPN,JP">JAPAN
+	</option><option value="JOR,JO">JORDAN
+	</option><option value="KAZ,KZ">KAZAKHSTAN
+	</option><option value="KEN,KE">KENYA
+	</option><option value="KIR,KI">KIRIBATI
+	</option><option value="KOR,KR">KOREA REPUBLIC OF
+	</option><option value="KWT,KW">KUWAIT
+	</option><option value="KGZ,KG">KYRGYZSTAN
+	</option><option value="LAO,LA">LAOS
+	</option><option value="LVA,LV">LATVIA
+	</option><option value="LBN,LB">LEBANON
+	</option><option value="LSO,LS">LESOTHO
+	</option><option value="LBR,LR">LIBERIA
+	</option><option value="LBY,LY">LIBYA
+	</option><option value="LIE,LI">LIECHTENSTEIN
+	</option><option value="LTU,LT">LITHUANIA
+	</option><option value="LUX,LU">LUXEMBOURG
+	</option><option value="MAC,MO">MACAU
+	</option><option value="MKD,MK">MACEDONIA
+	</option><option value="MDG,MG">MADAGASCAR
+	</option><option value="MWI,MW">MALAWI
+	</option><option value="MYS,MY">MALAYSIA
+	</option><option value="MDV,MV">MALDIVES
+	</option><option value="MLI,ML">MALI
+	</option><option value="MLT,MT">MALTA
+	</option><option value="MHL,MH">MARSHALL ISLANDS
+	</option><option value="MTQ,MQ">MARTINIQUE
+	</option><option value="MRT,MR">MAURITANIA
+	</option><option value="MUS,MU">MAURITIUS
+	</option><option value="MYT,YT">MAYOTTE
+	</option><option value="MEX,MX">MEXICO
+	</option><option value="FSM,FM">MICRONESIA FEDERATED STATES OF
+	</option><option value="MDA,MD">MOLDOVA
+	</option><option value="MCO,MC">MONACO
+	</option><option value="MNG,MN">MONGOLIA
+	</option><option value="MSR,MS">MONTSERRAT
+	</option><option value="MAR,MA">MOROCCO
+	</option><option value="MOZ,MZ">MOZAMBIQUE
+	</option><option value="MMR,MM">MYANMAR
+	</option><option value="NAM,NA">NAMIBIA
+	</option><option value="NRU,NR">NAURU
+	</option><option value="NPL,NP">NEPAL
+	</option><option value="NLD,NL">NETHERLANDS
+	</option><option value="ANT,AN">NETHERLANDS ANTILLES
+	</option><option value="NCL,NC">NEW CALEDONIA
+	</option><option value="NZL,NZ">NEW ZEALAND
+	</option><option value="NIC,NI">NICARAGUA
+	</option><option value="NER,NE">NIGER
+	</option><option value="NGA,NG">NIGERIA
+	</option><option value="NIU,NU">NIUE
+	</option><option value="NFK,NF">NORFOLK ISLAND
+	</option><option value="MNP,MP">NORTHERN MARIANA ISLANDS
+	</option><option value="NOR,NO">NORWAY
+	</option><option value="OMN,OM">OMAN
+	</option><option value="PAK,PK">PAKISTAN
+	</option><option value="PLW,PW">PALAU
+	</option><option value="PSE,PS">PALESTINIAN TERRITORY
+	</option><option value="PAN,PA">PANAMA
+	</option><option value="PNG,PG">PAPUA NEW GUINEA
+	</option><option value="PRY,PY">PARAGUAY
+	</option><option value="PER,PE">PERU
+	</option><option value="PHL,PH">PHILIPPINES
+	</option><option value="PCN,PN">PITCAIRN
+	</option><option value="POL,PL">POLAND
+	</option><option value="PRT,PT">PORTUGAL
+	</option><option value="PRI,PR">PUERTO RICO
+	</option><option value="QAT,QA">QATAR
+	</option><option value="REU,RE">REUNION
+	</option><option value="ROM,RO">ROMANIA
+	</option><option value="RUS,RU">RUSSIAN FEDERATION
+	</option><option value="RWA,RW">RWANDA
+	</option><option value="KNA,KN">SAINT KITTS AND NEVIS
+	</option><option value="LCA,LC">SAINT LUCIA
+	</option><option value="VCT,VC">SAINT VINCENT AND THE GRENADINES
+	</option><option value="WSM,WS">SAMOA
+	</option><option value="SMR,SM">SAN MARINO
+	</option><option value="STP,ST">SAO TOME AND PRINCIPE
+	</option><option value="SAU,SA">SAUDI ARABIA
+	</option><option value="SEN,SN">SENEGAL
+	</option><option value="SYC,SC">SEYCHELLES
+	</option><option value="SLE,SL">SIERRA LEONE
+	</option><option value="SGP,SG">SINGAPORE
+	</option><option value="SVK,SK">SLOVAKIA
+	</option><option value="SVN,SI">SLOVENIA
+	</option><option value="SLB,SB">SOLOMON ISLANDS
+	</option><option value="SOM,SO">SOMALIA
+	</option><option value="ZAF,ZA">SOUTH AFRICA
+	</option><option value="SGS,GS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
+	</option><option value="ESP,ES">SPAIN
+	</option><option value="LKA,LK">SRI LANKA
+	</option><option value="SHN,SH">ST. HELENA
+	</option><option value="SPM,PM">ST. PIERRE AND MIQUELON
+	</option><option value="SDN,SD">SUDAN
+	</option><option value="SUR,SR">SURINAME
+	</option><option value="SJM,SJ">SVALBARD AND JAN MAYEN ISLANDS
+	</option><option value="SWZ,SZ">SWAZILAND
+	</option><option value="SWE,SE">SWEDEN
+	</option><option value="CHE,CH">SWITZERLAND
+	</option><option value="SYR,SY">SYRIA
+	</option><option value="TWN,TW">TAIWAN
+	</option><option value="TJK,TJ">TAJIKISTAN
+	</option><option value="TZA,TZ">TANZANIA
+	</option><option value="THA,TH">THAILAND
+	</option><option value="TGO,TG">TOGO
+	</option><option value="TKL,TK">TOKELAU
+	</option><option value="TON,TO">TONGA
+	</option><option value="TTO,TT">TRINIDAD AND TOBAGO
+	</option><option value="TUN,TN">TUNISIA
+	</option><option value="TUR,TR">TURKEY
+	</option><option value="TKM,TM">TURKMENISTAN
+	</option><option value="TCA,TC">TURKS AND CAICOS ISLANDS
+	</option><option value="TUV,TV">TUVALU
+	</option><option value="UGA,UG">UGANDA
+	</option><option value="UKR,UA">UKRAINE
+	</option><option value="ARE,AE">UNITED ARAB EMIRATES
+	</option><option value="GBR,UK">UNITED KINGDOM
+	</option><option value="USA,US" selected="selected">UNITED STATES
+	</option><option value="UMI,UM">UNITED STATES MINOR OUTLYING ISLANDS
+	</option><option value="URY,UY">URUGUAY
+	</option><option value="UZB,UZ">UZBEKISTAN
+	</option><option value="VUT,VU">VANUATU
+	</option><option value="VEN,UE">VENEZUELA
+	</option><option value="VNM,VN">VIET NAM
+	</option><option value="VGB,VG">VIRGIN ISLANDS BRITISH
+	</option><option value="VIR,VI">VIRGIN ISLANDS US
+	</option><option value="WLF,WF">WALLIS AND FUTUNA ISLANDS
+	</option><option value="ESH,EH">WESTERN SAHARA
+	</option><option value="YEM,YE">YEMEN
+	</option><option value="YUG,YU">YUGOSLAVIA
+	</option><option value="ZMB,ZM">ZAMBIA
+	</option><option value="ZWE,ZW">ZIMBABWE
+	</option></select>
+			</span>
+<span class="cell_200 small_10">Required Visible</span>
+</div><div class="row">
+<span class="cell_150" title="header=[Neighborhood] body=[Optional and visible. Used in searches, please specify your Neighborhood, you can also specify a location (such as a mall, metro station, hallway, landmark) that will make it easy for other people to recognize.  Ex: Across from the school Chedar county Public library]">Neighborhood:</span>
+<span class="cell_400"><input type="text" name="home_name" value="" title="" class="w350" maxlength="70"  /></span>
+<span class="cell_200 small_10">Optional Visible</span>
+</div>
+		<input class="noshow" name="form_olat" value="0" size="11" maxlength = "16" />
+		<input class="noshow" name="form_olon" value="0" size="11" maxlength="16" />
+	
+
+</div>
+<div class="spacer">
+<input  class="noshow" name="home_coded" value="" size="1" maxlength = "1" />
+<input  class="noshow" name="work_coded" value="" size="1" maxlength = "1" />
+</div>
+
+<div id ="mapcontainer" class="cell_750 with_border" >
+<div id="map_canvas_origin" class="trip_map_canvas"></div>
+</div><div class="spacer">
+</div>
+<h2>To trip destination:</h2>
+<div class="cell_750 with_border">
+<div class="row">
+<span class="cell_150" title="header=[Street:] body=[Optional and private. We use this street address only for geocoding purpose. Please specify your trip ending location (destination) this can be your work street, street corner or any major street for your destination.  Ex:123 work rd.  Wall st. &amp; Bank  Google ave.]">Street:</span>
+<span class="cell_400"><input type="text" name="work_street"  value="" placeholder="" title="Street:" class="w350" maxlength="70"  id="work_street" /></span>
+<span class="cell_200 small_10">Optional Private</span></div><div class="row">
+<span class="cell_150">City:</span>
+<span class="cell_400"><input type="text" name="work_city" id="work_city" value="" title="City:" class="w350" maxlength="70"  onchange="codeAddress_end()" /></span>
+<span class="cell_200 small_10">Required Visible</span></div><div class="row"><span class="cell_150">State/Province:</span>
+<span class="cell_400"><input type="text" name="work_state_prov" id="work_state_prov" value="" title="State/Province:" size="3" maxlength="3"  onchange="codeAddress_end()" /> Zip/Postal:
+		<input type="text" name="work_postal_zip" id="work_postal_zip" value="" title="Zip/Postal:" size="15" maxlength="15"  onchange="codeAddress_end()" /></span><span class="cell_200 small_10">Optional Visible</span>
+</div><div class="row ">
+<span class="cell_150">Country:</span>
+<span class="cell_400"><select name="work_country" id="work_country" class="w350" onchange="codeAddress_end();" ><option value="">Select your country from the list</option>
+<option value="AFG,AF">AFGHANISTAN
+	</option><option value="ALB,AL">ALBANIA
+	</option><option value="DZA,DZ">ALGERIA
+	</option><option value="ASM,AS">AMERICAN SAMOA
+	</option><option value="AND,AD">ANDORRA
+	</option><option value="AGO,AO">ANGOLA
+	</option><option value="AIA,AI">ANGUILLA
+	</option><option value="ATA,AQ">ANTARCTICA
+	</option><option value="ATG,AG">ANTIGUA AND BARBUDA
+	</option><option value="ARG,AR">ARGENTINA
+	</option><option value="ARM,AM">ARMENIA
+	</option><option value="ABW,AW">ARUBA
+	</option><option value="AUS,AU">AUSTRALIA
+	</option><option value="AUT,AT">AUSTRIA
+	</option><option value="AZE,AJ">AZERBAIJAN
+	</option><option value="BHS,BS">BAHAMAS
+	</option><option value="BHR,BH">BAHRAIN
+	</option><option value="BGD,BD">BANGLADESH
+	</option><option value="BRB,BB">BARBADOS
+	</option><option value="BLR,BY">BELARUS
+	</option><option value="BEL,BE">BELGIUM
+	</option><option value="BLZ,BZ">BELIZE
+	</option><option value="BEN,BJ">BENIN
+	</option><option value="BMU,BM">BERMUDA
+	</option><option value="BTN,BT">BHUTAN
+	</option><option value="BOL,BO">BOLIVIA
+	</option><option value="BIH,BA">BOSNIA AND HERZEGOWINA
+	</option><option value="BWA,BW">BOTSWANA
+	</option><option value="BVT,BV">BOUVET ISLAND
+	</option><option value="BRA,BR">BRAZIL
+	</option><option value="IOT,IO">BRITISH INDIAN OCEAN TERRITORY
+	</option><option value="BRN,BN">BRUNEI DARUSSALAM
+	</option><option value="BGR,BG">BULGARIA
+	</option><option value="BFA,BF">BURKINA FASO
+	</option><option value="BDI,BI">BURUNDI
+	</option><option value="BYE,BY">BYELORUSSIA
+	</option><option value="KHM,KH">CAMBODIA
+	</option><option value="CMR,CM">CAMEROON
+	</option><option value="CAN,CA">CANADA
+	</option><option value="CPV,CV">CAPE VERDE
+	</option><option value="CYM,KY">CAYMAN ISLANDS
+	</option><option value="CAF,CF">CENTRAL AFRICAN REPUBLIC
+	</option><option value="TCD,TD">CHAD
+	</option><option value="CHL,CL">CHILE
+	</option><option value="CHN,CN">CHINA
+	</option><option value="CXR,CX">CHRISTMAS ISLAND
+	</option><option value="CCK,CC">COCOS ISLANDS KEELING
+	</option><option value="COL,CO">COLOMBIA
+	</option><option value="COM,KM">COMOROS
+	</option><option value="COG,CG">CONGO
+	</option><option value="COD,ZR">CONGO THE DEMOCRATIC REPUBLIC OF THE
+	</option><option value="COK,CK">COOK ISLANDS
+	</option><option value="CRI,CR">COSTA RICA
+	</option><option value="HRV,HR">CROATIA Hrvatska
+	</option><option value="CUB,CU">CUBA
+	</option><option value="CYP,CY">CYPRUS
+	</option><option value="CZE,CZ">CZECH REPUBLIC
+	</option><option value="DNK,DK">DENMARK
+	</option><option value="DJI,DJ">DJIBOUTI
+	</option><option value="DMA,DM">DOMINICA
+	</option><option value="DOM,DO">DOMINICAN REPUBLIC
+	</option><option value="TMP,TP">EAST TIMOR
+	</option><option value="ECU,EC">ECUADOR
+	</option><option value="EGY,EG">EGYPT
+	</option><option value="SLV,SV">EL SALVADOR
+	</option><option value="GNQ,GQ">EQUATORIAL GUINEA
+	</option><option value="ERI,ER">ERITREA
+	</option><option value="EST,EE">ESTONIA
+	</option><option value="ETH,ET">ETHIOPIA
+	</option><option value="FLK,FK">FALKLAND ISLANDS Malvinas
+	</option><option value="FRO,FO">FAROE ISLANDS
+	</option><option value="FJI,FJ">FIJI
+	</option><option value="FIN,FI">FINLAND
+	</option><option value="FRA,FR">FRANCE
+	</option><option value="GUF,GF">FRENCH GUIANA
+	</option><option value="PYF,PF">FRENCH POLYNESIA
+	</option><option value="ATF,TF">FRENCH SOUTHERN TERRITORIES
+	</option><option value="GAB,GA">GABON
+	</option><option value="GMB,GM">GAMBIA
+	</option><option value="GEO,GE">GEORGIA
+	</option><option value="DEU,DE">GERMANY
+	</option><option value="GHA,GH">GHANA
+	</option><option value="GIB,GI">GIBRALTAR
+	</option><option value="GRC,GR">GREECE
+	</option><option value="GRL,GL">GREENLAND
+	</option><option value="GRD,GD">GRENADA
+	</option><option value="GLP,GP">GUADELOUPE
+	</option><option value="GUM,GU">GUAM
+	</option><option value="GTM,GT">GUATEMALA
+	</option><option value="GIN,GN">GUINEA
+	</option><option value="GNB,GW">GUINEA-BISSAU
+	</option><option value="GUY,GY">GUYANA
+	</option><option value="HTI,HT">HAITI
+	</option><option value="HMD,HM">HEARD AND MC DONALD ISLANDS
+	</option><option value="VAT,VA">HOLY SEE VATICAN CITY STATE
+	</option><option value="HND,HN">HONDURAS
+	</option><option value="HKG,HK">HONG KONG
+	</option><option value="HUN,HU">HUNGARY
+	</option><option value="ISL,IS">ICELAND
+	</option><option value="IND,IN">INDIA
+	</option><option value="IDN,ID">INDONESIA
+	</option><option value="IRN,IR">IRAN
+	</option><option value="IRQ,IQ">IRAQ
+	</option><option value="IRL,IE">IRELAND
+	</option><option value="ISR,IL">ISRAEL
+	</option><option value="ITA,IT">ITALY
+	</option><option value="CIV,CI">IVORY COAST REPUBLIC OF THE
+	</option><option value="JAM,JM">JAMAICA
+	</option><option value="JPN,JP">JAPAN
+	</option><option value="JOR,JO">JORDAN
+	</option><option value="KAZ,KZ">KAZAKHSTAN
+	</option><option value="KEN,KE">KENYA
+	</option><option value="KIR,KI">KIRIBATI
+	</option><option value="KOR,KR">KOREA REPUBLIC OF
+	</option><option value="KWT,KW">KUWAIT
+	</option><option value="KGZ,KG">KYRGYZSTAN
+	</option><option value="LAO,LA">LAOS
+	</option><option value="LVA,LV">LATVIA
+	</option><option value="LBN,LB">LEBANON
+	</option><option value="LSO,LS">LESOTHO
+	</option><option value="LBR,LR">LIBERIA
+	</option><option value="LBY,LY">LIBYA
+	</option><option value="LIE,LI">LIECHTENSTEIN
+	</option><option value="LTU,LT">LITHUANIA
+	</option><option value="LUX,LU">LUXEMBOURG
+	</option><option value="MAC,MO">MACAU
+	</option><option value="MKD,MK">MACEDONIA
+	</option><option value="MDG,MG">MADAGASCAR
+	</option><option value="MWI,MW">MALAWI
+	</option><option value="MYS,MY">MALAYSIA
+	</option><option value="MDV,MV">MALDIVES
+	</option><option value="MLI,ML">MALI
+	</option><option value="MLT,MT">MALTA
+	</option><option value="MHL,MH">MARSHALL ISLANDS
+	</option><option value="MTQ,MQ">MARTINIQUE
+	</option><option value="MRT,MR">MAURITANIA
+	</option><option value="MUS,MU">MAURITIUS
+	</option><option value="MYT,YT">MAYOTTE
+	</option><option value="MEX,MX">MEXICO
+	</option><option value="FSM,FM">MICRONESIA FEDERATED STATES OF
+	</option><option value="MDA,MD">MOLDOVA
+	</option><option value="MCO,MC">MONACO
+	</option><option value="MNG,MN">MONGOLIA
+	</option><option value="MSR,MS">MONTSERRAT
+	</option><option value="MAR,MA">MOROCCO
+	</option><option value="MOZ,MZ">MOZAMBIQUE
+	</option><option value="MMR,MM">MYANMAR
+	</option><option value="NAM,NA">NAMIBIA
+	</option><option value="NRU,NR">NAURU
+	</option><option value="NPL,NP">NEPAL
+	</option><option value="NLD,NL">NETHERLANDS
+	</option><option value="ANT,AN">NETHERLANDS ANTILLES
+	</option><option value="NCL,NC">NEW CALEDONIA
+	</option><option value="NZL,NZ">NEW ZEALAND
+	</option><option value="NIC,NI">NICARAGUA
+	</option><option value="NER,NE">NIGER
+	</option><option value="NGA,NG">NIGERIA
+	</option><option value="NIU,NU">NIUE
+	</option><option value="NFK,NF">NORFOLK ISLAND
+	</option><option value="MNP,MP">NORTHERN MARIANA ISLANDS
+	</option><option value="NOR,NO">NORWAY
+	</option><option value="OMN,OM">OMAN
+	</option><option value="PAK,PK">PAKISTAN
+	</option><option value="PLW,PW">PALAU
+	</option><option value="PSE,PS">PALESTINIAN TERRITORY
+	</option><option value="PAN,PA">PANAMA
+	</option><option value="PNG,PG">PAPUA NEW GUINEA
+	</option><option value="PRY,PY">PARAGUAY
+	</option><option value="PER,PE">PERU
+	</option><option value="PHL,PH">PHILIPPINES
+	</option><option value="PCN,PN">PITCAIRN
+	</option><option value="POL,PL">POLAND
+	</option><option value="PRT,PT">PORTUGAL
+	</option><option value="PRI,PR">PUERTO RICO
+	</option><option value="QAT,QA">QATAR
+	</option><option value="REU,RE">REUNION
+	</option><option value="ROM,RO">ROMANIA
+	</option><option value="RUS,RU">RUSSIAN FEDERATION
+	</option><option value="RWA,RW">RWANDA
+	</option><option value="KNA,KN">SAINT KITTS AND NEVIS
+	</option><option value="LCA,LC">SAINT LUCIA
+	</option><option value="VCT,VC">SAINT VINCENT AND THE GRENADINES
+	</option><option value="WSM,WS">SAMOA
+	</option><option value="SMR,SM">SAN MARINO
+	</option><option value="STP,ST">SAO TOME AND PRINCIPE
+	</option><option value="SAU,SA">SAUDI ARABIA
+	</option><option value="SEN,SN">SENEGAL
+	</option><option value="SYC,SC">SEYCHELLES
+	</option><option value="SLE,SL">SIERRA LEONE
+	</option><option value="SGP,SG">SINGAPORE
+	</option><option value="SVK,SK">SLOVAKIA
+	</option><option value="SVN,SI">SLOVENIA
+	</option><option value="SLB,SB">SOLOMON ISLANDS
+	</option><option value="SOM,SO">SOMALIA
+	</option><option value="ZAF,ZA">SOUTH AFRICA
+	</option><option value="SGS,GS">SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS
+	</option><option value="ESP,ES">SPAIN
+	</option><option value="LKA,LK">SRI LANKA
+	</option><option value="SHN,SH">ST. HELENA
+	</option><option value="SPM,PM">ST. PIERRE AND MIQUELON
+	</option><option value="SDN,SD">SUDAN
+	</option><option value="SUR,SR">SURINAME
+	</option><option value="SJM,SJ">SVALBARD AND JAN MAYEN ISLANDS
+	</option><option value="SWZ,SZ">SWAZILAND
+	</option><option value="SWE,SE">SWEDEN
+	</option><option value="CHE,CH">SWITZERLAND
+	</option><option value="SYR,SY">SYRIA
+	</option><option value="TWN,TW">TAIWAN
+	</option><option value="TJK,TJ">TAJIKISTAN
+	</option><option value="TZA,TZ">TANZANIA
+	</option><option value="THA,TH">THAILAND
+	</option><option value="TGO,TG">TOGO
+	</option><option value="TKL,TK">TOKELAU
+	</option><option value="TON,TO">TONGA
+	</option><option value="TTO,TT">TRINIDAD AND TOBAGO
+	</option><option value="TUN,TN">TUNISIA
+	</option><option value="TUR,TR">TURKEY
+	</option><option value="TKM,TM">TURKMENISTAN
+	</option><option value="TCA,TC">TURKS AND CAICOS ISLANDS
+	</option><option value="TUV,TV">TUVALU
+	</option><option value="UGA,UG">UGANDA
+	</option><option value="UKR,UA">UKRAINE
+	</option><option value="ARE,AE">UNITED ARAB EMIRATES
+	</option><option value="GBR,UK">UNITED KINGDOM
+	</option><option value="USA,US" selected="selected">UNITED STATES
+	</option><option value="UMI,UM">UNITED STATES MINOR OUTLYING ISLANDS
+	</option><option value="URY,UY">URUGUAY
+	</option><option value="UZB,UZ">UZBEKISTAN
+	</option><option value="VUT,VU">VANUATU
+	</option><option value="VEN,UE">VENEZUELA
+	</option><option value="VNM,VN">VIET NAM
+	</option><option value="VGB,VG">VIRGIN ISLANDS BRITISH
+	</option><option value="VIR,VI">VIRGIN ISLANDS US
+	</option><option value="WLF,WF">WALLIS AND FUTUNA ISLANDS
+	</option><option value="ESH,EH">WESTERN SAHARA
+	</option><option value="YEM,YE">YEMEN
+	</option><option value="YUG,YU">YUGOSLAVIA
+	</option><option value="ZMB,ZM">ZAMBIA
+	</option><option value="ZWE,ZW">ZIMBABWE
+	</option></select>
+</span><span class="cell_200 small_10">Required Visible</span>
+</div><div class="row"  title="header=[Employer or event:] body=[Optional and visible. Used in searches, please specify your Employer or event, you can also specify a location name (such as a park and ride, train station, mall, metro station, hallway, landmark) that will make it easy for other people to recognize.  Ex:  -Work Moore&amp;Moore  -The Special Concert  -Pine train station  -Scoop it up Park and Ride  -Parking near the colliseum]">
+<span class="cell_150">Employer or event:</span>
+<span class="cell_400"><input type="text" name="work_name" id="work_name" value="" title="Employer or event:" class="w350" maxlength="70" /></span>
+
+<span class="cell_200 small_10">Optional Visible Optional. Used for searches.  Enter your employer name or describe the event you are attending.</span>
+</div>
+	<input type="text" name="form_dlat" value="0" size="11" maxlength = "16" class="noshow"/>
+	<input type="text" name="form_dlon" value="0" size="11" maxlength="16" class="noshow" />
+
+</div>
+<div class="spacer">
+</div>
+<h2>Schedule:</h2>
+<div class="cell_750 with_border"><div class="row">
+<span class="cell_150">Arrive at destination at:</span>
+<span class="cell_400">
+					<select class="w350" name="leave_origin_time"><option value="00:00:00">Midnight
+	</option><option value="00:15:00">12:15 AM
+	</option><option value="00:30:00">12:30 AM
+	</option><option value="00:45:00">12:45 AM
+	</option><option value="01:00:00">1:00 AM
+	</option><option value="01:15:00">1:15 AM
+	</option><option value="01:30:00">1:30 AM
+	</option><option value="01:45:00">1:45 AM
+	</option><option value="02:00:00">2:00 AM
+	</option><option value="02:15:00">2:15 AM
+	</option><option value="02:30:00">2:30 AM
+	</option><option value="02:45:00">2:45 AM
+	</option><option value="03:00:00">3:00 AM
+	</option><option value="03:15:00">3:15 AM
+	</option><option value="03:30:00">3:30 AM
+	</option><option value="03:45:00">3:45 AM
+	</option><option value="04:00:00">4:00 AM
+	</option><option value="04:15:00">4:15 AM
+	</option><option value="04:30:00">4:30 AM
+	</option><option value="04:45:00">4:45 AM
+	</option><option value="05:00:00">5:00 AM
+	</option><option value="05:15:00">5:15 AM
+	</option><option value="05:30:00">5:30 AM
+	</option><option value="05:45:00">5:45 AM
+	</option><option value="06:00:00">6:00 AM
+	</option><option value="06:15:00">6:15 AM
+	</option><option value="06:30:00">6:30 AM
+	</option><option value="06:45:00">6:45 AM
+	</option><option value="07:00:00">7:00 AM
+	</option><option value="07:15:00">7:15 AM
+	</option><option value="07:30:00">7:30 AM
+	</option><option value="07:45:00">7:45 AM
+	</option><option value="08:00:00">8:00 AM
+	</option><option value="08:15:00">8:15 AM
+	</option><option value="08:30:00">8:30 AM
+	</option><option value="08:45:00">8:45 AM
+	</option><option value="09:00:00" selected="selected">9:00 AM
+	</option><option value="09:15:00">9:15 AM
+	</option><option value="09:30:00">9:30 AM
+	</option><option value="09:45:00">9:45 AM
+	</option><option value="10:00:00">10:00 AM
+	</option><option value="10:15:00">10:15 AM
+	</option><option value="10:30:00">10:30 AM
+	</option><option value="10:45:00">10:45 AM
+	</option><option value="11:00:00">11:00 AM
+	</option><option value="11:15:00">11:15 AM
+	</option><option value="11:30:00">11:30 AM
+	</option><option value="11:45:00">11:45 AM
+	</option><option value="12:00:00">Noon
+	</option><option value="12:15:00">12:15 PM
+	</option><option value="12:30:00">12:30 PM
+	</option><option value="12:45:00">12:45 PM
+	</option><option value="13:00:00">1:00 PM
+	</option><option value="13:15:00">1:15 PM
+	</option><option value="13:30:00">1:30 PM
+	</option><option value="13:45:00">1:45 PM
+	</option><option value="14:00:00">2:00 PM
+	</option><option value="14:15:00">2:15 PM
+	</option><option value="14:30:00">2:30 PM
+	</option><option value="14:45:00">2:45 PM
+	</option><option value="15:00:00">3:00 PM
+	</option><option value="15:15:00">3:15 PM
+	</option><option value="15:30:00">3:30 PM
+	</option><option value="15:45:00">3:45 PM
+	</option><option value="16:00:00">4:00 PM
+	</option><option value="16:15:00">4:15 PM
+	</option><option value="16:30:00">4:30 PM
+	</option><option value="16:45:00">4:45 PM
+	</option><option value="17:00:00">5:00 PM
+	</option><option value="17:15:00">5:15 PM
+	</option><option value="17:30:00">5:30 PM
+	</option><option value="17:45:00">5:45 PM
+	</option><option value="18:00:00">6:00 PM
+	</option><option value="18:15:00">6:15 PM
+	</option><option value="18:30:00">6:30 PM
+	</option><option value="18:45:00">6:45 PM
+	</option><option value="19:00:00">7:00 PM
+	</option><option value="19:15:00">7:15 PM
+	</option><option value="19:30:00">7:30 PM
+	</option><option value="19:45:00">7:45 PM
+	</option><option value="20:00:00">8:00 PM
+	</option><option value="20:15:00">8:15 PM
+	</option><option value="20:30:00">8:30 PM
+	</option><option value="20:45:00">8:45 PM
+	</option><option value="21:00:00">9:00 PM
+	</option><option value="21:15:00">9:15 PM
+	</option><option value="21:30:00">9:30 PM
+	</option><option value="21:45:00">9:45 PM
+	</option><option value="22:00:00">10:00 PM
+	</option><option value="22:15:00">10:15 PM
+	</option><option value="22:30:00">10:30 PM
+	</option><option value="22:45:00">10:45 PM
+	</option><option value="23:00:00">11:00 PM
+	</option><option value="23:15:00">11:15 PM
+	</option><option value="23:30:00">11:30 PM
+	</option><option value="23:45:00">11:45 PM
+	</option></select></span></div>
+<div class="row">
+<span class="cell_150">Leave destination at:</span><span class="cell_400">
+					<select class="w350" name="leave_destination_time"><option value="00:00:00">Midnight
+	</option><option value="00:15:00">12:15 AM
+	</option><option value="00:30:00">12:30 AM
+	</option><option value="00:45:00">12:45 AM
+	</option><option value="01:00:00">1:00 AM
+	</option><option value="01:15:00">1:15 AM
+	</option><option value="01:30:00">1:30 AM
+	</option><option value="01:45:00">1:45 AM
+	</option><option value="02:00:00">2:00 AM
+	</option><option value="02:15:00">2:15 AM
+	</option><option value="02:30:00">2:30 AM
+	</option><option value="02:45:00">2:45 AM
+	</option><option value="03:00:00">3:00 AM
+	</option><option value="03:15:00">3:15 AM
+	</option><option value="03:30:00">3:30 AM
+	</option><option value="03:45:00">3:45 AM
+	</option><option value="04:00:00">4:00 AM
+	</option><option value="04:15:00">4:15 AM
+	</option><option value="04:30:00">4:30 AM
+	</option><option value="04:45:00">4:45 AM
+	</option><option value="05:00:00">5:00 AM
+	</option><option value="05:15:00">5:15 AM
+	</option><option value="05:30:00">5:30 AM
+	</option><option value="05:45:00">5:45 AM
+	</option><option value="06:00:00">6:00 AM
+	</option><option value="06:15:00">6:15 AM
+	</option><option value="06:30:00">6:30 AM
+	</option><option value="06:45:00">6:45 AM
+	</option><option value="07:00:00">7:00 AM
+	</option><option value="07:15:00">7:15 AM
+	</option><option value="07:30:00">7:30 AM
+	</option><option value="07:45:00">7:45 AM
+	</option><option value="08:00:00">8:00 AM
+	</option><option value="08:15:00">8:15 AM
+	</option><option value="08:30:00">8:30 AM
+	</option><option value="08:45:00">8:45 AM
+	</option><option value="09:00:00">9:00 AM
+	</option><option value="09:15:00">9:15 AM
+	</option><option value="09:30:00">9:30 AM
+	</option><option value="09:45:00">9:45 AM
+	</option><option value="10:00:00">10:00 AM
+	</option><option value="10:15:00">10:15 AM
+	</option><option value="10:30:00">10:30 AM
+	</option><option value="10:45:00">10:45 AM
+	</option><option value="11:00:00">11:00 AM
+	</option><option value="11:15:00">11:15 AM
+	</option><option value="11:30:00">11:30 AM
+	</option><option value="11:45:00">11:45 AM
+	</option><option value="12:00:00">Noon
+	</option><option value="12:15:00">12:15 PM
+	</option><option value="12:30:00">12:30 PM
+	</option><option value="12:45:00">12:45 PM
+	</option><option value="13:00:00">1:00 PM
+	</option><option value="13:15:00">1:15 PM
+	</option><option value="13:30:00">1:30 PM
+	</option><option value="13:45:00">1:45 PM
+	</option><option value="14:00:00">2:00 PM
+	</option><option value="14:15:00">2:15 PM
+	</option><option value="14:30:00">2:30 PM
+	</option><option value="14:45:00">2:45 PM
+	</option><option value="15:00:00">3:00 PM
+	</option><option value="15:15:00">3:15 PM
+	</option><option value="15:30:00">3:30 PM
+	</option><option value="15:45:00">3:45 PM
+	</option><option value="16:00:00">4:00 PM
+	</option><option value="16:15:00">4:15 PM
+	</option><option value="16:30:00">4:30 PM
+	</option><option value="16:45:00">4:45 PM
+	</option><option value="17:00:00" selected="selected">5:00 PM
+	</option><option value="17:15:00">5:15 PM
+	</option><option value="17:30:00">5:30 PM
+	</option><option value="17:45:00">5:45 PM
+	</option><option value="18:00:00">6:00 PM
+	</option><option value="18:15:00">6:15 PM
+	</option><option value="18:30:00">6:30 PM
+	</option><option value="18:45:00">6:45 PM
+	</option><option value="19:00:00">7:00 PM
+	</option><option value="19:15:00">7:15 PM
+	</option><option value="19:30:00">7:30 PM
+	</option><option value="19:45:00">7:45 PM
+	</option><option value="20:00:00">8:00 PM
+	</option><option value="20:15:00">8:15 PM
+	</option><option value="20:30:00">8:30 PM
+	</option><option value="20:45:00">8:45 PM
+	</option><option value="21:00:00">9:00 PM
+	</option><option value="21:15:00">9:15 PM
+	</option><option value="21:30:00">9:30 PM
+	</option><option value="21:45:00">9:45 PM
+	</option><option value="22:00:00">10:00 PM
+	</option><option value="22:15:00">10:15 PM
+	</option><option value="22:30:00">10:30 PM
+	</option><option value="22:45:00">10:45 PM
+	</option><option value="23:00:00">11:00 PM
+	</option><option value="23:15:00">11:15 PM
+	</option><option value="23:30:00">11:30 PM
+	</option><option value="23:45:00">11:45 PM
+	</option></select></span></div>
+<div class="row">
+<span class="cell_150" title="header=[Schedule:] body=[Enter your regular schedule here. For recurring trips over the weekend for example, enter the most common days that you will travel, for example Saturday and Sunday. Use the days do not vary drop down list to specify if the days that you carpool can or not vary.]">&nbsp;</span>
+<span class="cell_400">Regular schedule: <input type="radio" name="regular_schedule" title="Schedule" value='Y' onclick="showregular()"  /><br />One time trip date: <input type="radio" name="regular_schedule"  title="One time trip date" value='N' onclick="showonetime()"  /></span></div><div class="row">
+<span class="cell_150">&nbsp;</span><span class="cell_400">
+<span id="regular" >
+<span class="cell_free_pr5"><span class="font_11">Monday</span><br/><input type="checkbox" name="day1" value="1" checked="checked" /></span><span class="cell_free_pr5"><span class="font_11">Tuesday</span><br/><input type="checkbox" name="day2" value="2" checked="checked" /></span><span class="cell_free_pr5"><span class="font_11">Wednesday</span><br/><input type="checkbox" name="day3" value="3" checked="checked" /></span><span class="cell_free_pr5"><span class="font_11">Thursday</span><br/><input type="checkbox" name="day4" value="4" checked="checked" /></span><span class="cell_free_pr5"><span class="font_11">Friday</span><br/><input type="checkbox" name="day5" value="5" checked="checked" /></span><span class="cell_free_pr5"><span class="font_11">Saturday</span><br/><input type="checkbox" name="day6" value="6"  /></span><span class="cell_free_pr5"><span class="font_11">Sunday</span><br/><input type="checkbox" name="day7" value="7"  /></span>
+<br/><br/>
+<select  name="days_vary"> 
+			
+
+	<option value="1">Days Can Vary</option>
+	
+	<option value="2" selected="selected">Days Do Not Vary</option>
+	</select>
+
+
+
+
+</span>
+</span>
+		<div class="row"><span class="cell_150">&nbsp;</span>
+<span class="cell_400">
+<span id="onetime" class="with_border">
+		<span id="datepicker"></span>
+	<input type="hidden" id="trip_date_yymmdd" name="trip_date_yymmdd" size="10"/>
+	</span>
+	</span>
+	</div>
+		</div>
+</div>
+<div class="spacer">
+</div>
+
+	
+<div class="cell_750 with_border">
+
+<div class="row">
+<span class="cell_150" title="header=[Description:] body=[Optional and visible. Please add any information that doesn't fit anywhere else, for example: weird schedules, friendly quote, why you would like to carpool, etc. Please do not enter your private information (email addresses or phone numbers) in this description.]">Description:</span>
+<span class="cell_400"><textarea name="form_description" rows="8" cols="54" class="w350"></textarea> </span>
+<span class="cell_200 small_10">Optional Visible</span>
+</div>
+</div>
+<div class="spacer">
+<input class="noshow" name="number_of_minutes" value="">
+<input class="noshow" name="distance_in_meters" value="">
+</div>
+	
+<div class="cell_750 with_border">
+
+
+<input type="hidden" name="join_other_grouping" value="" />
+
+
+<span class="cell_750c"><input type ="submit" class="button" value="Submit" name ="record_trip" /></span>	</div></form><script type="text/javascript">
+var countryArray=new Array("","AF","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AJ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BA","BW","BV","BR","IO","BN","BG","BF","BI","BY","KH","CM","CA","CV","KY","CF","TD","CL","CN","CX","CC","CO","KM","CG","ZR","CK","CR","HR","CU","CY","CZ","DK","DJ","DM","DO","TP","EC","EG","SV","GQ","ER","EE","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GN","GW","GY","HT","HM","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IL","IT","CI","JM","JP","JO","KZ","KE","KI","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MK","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","MS","MA","MZ","MM","NA","NR","NP","NL","AN","NC","NZ","NI","NE","NG","NU","NF","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RE","RO","RU","RW","KN","LC","VC","WS","SM","ST","SA","SN","SC","SL","SG","SK","SI","SB","SO","ZA","GS","ES","LK","SH","PM","SD","SR","SJ","SZ","SE","CH","SY","TW","TJ","TZ","TH","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","US","UM","UY","UZ","VU","UE","VN","VG","VI","WF","EH","YE","YU","ZM","ZW");
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&language=EN"></script>
+<script type="text/javascript">
+  var geocoder;
+  var map;
+  var markersArray_start = [];
+  var markersArray_end = [];
+  var directionsService = new google.maps.DirectionsService();
+  var directionsDisplay;
+  
+// initialize the map first time it is shown
+
+  function initialize() {
+  	 var rendererOptions = {
+  	suppressMarkers: true,
+  	draggable: true
+	};
+	directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+
+    geocoder = new google.maps.Geocoder();
+    var Latlng_start = new google.maps.LatLng(document.fcoor.form_olat.value,document.fcoor.form_olon.value);
+    var Latlng_end = new google.maps.LatLng(document.fcoor.form_dlat.value,document.fcoor.form_dlon.value);
+    var myOptions = {
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    
+	   map = new google.maps.Map(document.getElementById("map_canvas_origin"), myOptions);
+	  
+	  var ctaLayer = new google.maps.KmlLayer('http://www.carpoolworld.com/GROUPS/biketrain.kml', {preserveViewport: true});
+ctaLayer.setMap(map);
+	  
+var input_home = document.getElementById('home_street');
+var autocomplete_home = new google.maps.places.Autocomplete(input_home);
+
+var input_work = document.getElementById('work_street');
+var autocomplete_work = new google.maps.places.Autocomplete(input_work);
+
+autocomplete_home.bindTo('bounds', map);
+google.maps.event.addListener(autocomplete_home, 'place_changed', function() {
+     var place = autocomplete_home.getPlace();
+      		home_or_work="H";
+      		update_form_lat_lon_address(home_or_work,place);
+      		document.fcoor.home_coded.value = "K";
+      		reposition_marker(document.fcoor.form_olat.value,document.fcoor.form_olon.value,home_or_work);
+       });
+
+
+autocomplete_work.bindTo('bounds', map);
+
+google.maps.event.addListener(autocomplete_work, 'place_changed', function() {
+     var place = autocomplete_work.getPlace();
+      	 	home_or_work="W";
+      	 	update_form_lat_lon_address(home_or_work,place); 
+      	 	document.fcoor.work_coded.value = "K";
+      	 	reposition_marker(document.fcoor.form_dlat.value,document.fcoor.form_dlon.value,home_or_work);
+       });
+       
+             
+	  
+	directionsDisplay.setMap(map);
+	if (document.getElementById("home_city").value !="" && document.fcoor.form_olat.value == 0){codeAddress_start();}
+	if (document.getElementById("work_city").value !="" && document.fcoor.form_dlat.value == 0){codeAddress_end();}
+	calcRoute();
+    
+  		var marker_start = new google.maps.Marker({
+		draggable: true,
+  		position: Latlng_start, 
+  		map: map
+	  });
+   	markersArray_start.push(marker_start);
+   
+   google.maps.event.addListener(marker_start, 'dragend', function (event) {
+    returnedlat = this.getPosition().lat();
+    returnedlon = this.getPosition().lng();
+    document.fcoor.form_olat.value = returnedlat;
+    document.fcoor.form_olon.value = returnedlon;
+    
+  
+	codeLatLng(returnedlat,returnedlon,"H");
+
+	calcRoute(); 
+	});
+   	
+   	 var marker_end = new google.maps.Marker({
+		draggable: true,
+  		position: Latlng_end, 
+  		map: map
+	  });
+   	markersArray_end.push(marker_end);
+   	
+   	google.maps.event.addListener(marker_end, 'dragend', function (event) {
+    returnedlat = this.getPosition().lat();
+    returnedlon = this.getPosition().lng();
+    document.fcoor.form_dlat.value = returnedlat;
+    document.fcoor.form_dlon.value = returnedlon;
+  
+	codeLatLng(returnedlat,returnedlon,"W");
+
+	calcRoute(); 
+	});
+
+   	
+
+
+    
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+function update_form_lat_lon_address(home_or_work,place){
+		var latz = place.geometry.location.lat();
+      	var lonz = place.geometry.location.lng();
+    	var administrative_area_level_1="";
+		var administrative_area_level_2="";
+		var administrative_area_level_3="";
+		var street_address ="";
+		var route="";
+		var street_number="";
+		var country="";
+		var intersection="";
+		var locality="";
+		var sublocality="";
+		var postal_code="";
+		var neighborhood="";
+		var premise="";
+		var point_of_interest="";
+		var natural_feature="";
+		var establishment="";
+		var i=0;
+      	 	
+            for(var j=0;j < place.address_components.length; j++){
+           	
+                for(var k=0; k < place.address_components[j].types.length; k++){
+       
+                    if(place.address_components[j].types[k] == "point_of_interest"){
+                       point_of_interest = place.address_components[j].point_of_interest;
+                       }    
+
+                    if(place.address_components[j].types[k] == "premise"){
+                       premise = place.address_components[j].premise;
+                       }                             	                	
+                    if(place.address_components[j].types[k] == "postal_code"){
+                       postal_code = place.address_components[j].short_name;
+                       }
+                    if(place.address_components[j].types[k] == "street_address"){
+                        street_address = place.address_components[j].long_name;
+                       } 
+                    if(place.address_components[j].types[k] == "route"){
+                        route = place.address_components[j].long_name;
+                       }  
+                    if(place.address_components[j].types[k] == "street_number"){
+                        street_number = place.address_components[j].long_name;
+                       }    
+                    if(place.address_components[j].types[k] == "intersection"){
+                        intersection = place.address_components[j].long_name;
+                       }         
+                    if(place.address_components[j].types[k] == "administrative_area_level_1"){
+                        administrative_area_level_1 = place.address_components[j].short_name;
+                       }  
+                    if(place.address_components[j].types[k] == "locality"){
+                        locality = place.address_components[j].long_name;
+                       }     
+                    if(place.address_components[j].types[k] == "sublocality"){
+                        sublocality = place.address_components[j].long_name;
+                       }      
+                    if(place.address_components[j].types[k] == "administrative_area_level_2"){
+                        administrative_area_level_2 = place.address_components[j].long_name;
+                       }   
+                       
+                       if(place.address_components[j].types[k] == "administrative_area_level_3"){
+                        administrative_area_level_3 = place.address_components[j].long_name;
+                       }   
+                   
+                    if(place.address_components[j].types[k] == "neighborhood"){
+                        neighborhood = place.address_components[j].long_name;
+                       }  
+                    
+                    if(place.address_components[j].types[k] == "country"){
+                        country = place.address_components[j].short_name;
+                       }         
+                }
+            }
+            
+            
+var return_country=country;
+var country_index_number=0; 
+country_index_number=find_country_in_array(countryArray, return_country);
+            
+
+	if (home_or_work == "H"){
+		document.fcoor.form_olat.value = latz;
+    	document.fcoor.form_olon.value = lonz;
+    	document.fcoor.home_street.value=route;
+   		if (street_number !=""){ document.fcoor.home_street.value=street_number+" "+route;}
+    	document.fcoor.home_city.value=locality;
+    	document.fcoor.home_state_prov.value=administrative_area_level_1;
+    	document.fcoor.home_postal_zip.value=postal_code;
+    	document.fcoor.home_country[country_index_number].selected=true;
+    	
+	}
+	
+	if (home_or_work == "W"){
+		document.fcoor.form_dlat.value = latz;
+    	document.fcoor.form_dlon.value = lonz;
+		document.fcoor.work_street.value=route;
+		if (street_number !=""){ document.fcoor.work_street.value=street_number+" "+route;}
+		document.fcoor.work_city.value=locality;
+		document.fcoor.work_state_prov.value=administrative_area_level_1;
+		document.fcoor.work_postal_zip.value=postal_code;
+		document.fcoor.work_country[country_index_number].selected=true;
+		
+		
+	}
+	
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+<script  type="text/javascript">
+document.fcoor.form_email.focus();
+</script>
+
+
+
+
+</body>
+</html>

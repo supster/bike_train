@@ -1,10 +1,10 @@
 <% provide(:title, 'Home')%>  
-<img src="images/biketrain_photo.jpg" id="photo" alt="">
-<div class="center">
-	<img src="images/biketrainlogo.png" id="biketrainlogo" alt="">
-	<h4>
-		Biketrains help bicyclists cycle social and cycle safer: meet at different points along a regular route and commute together, enjoying the company of your fellow cyclists and the visibility that numbers provide. Biketrains are designed for anyone who’d like a more social and safer way to commute by bike. Newer, less experienced riders who can gain confidence and learn safe cycling habits from more experienced bike commuters are especially welcome.   
-	</h4>
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" if !signed_in?%>
-	
+<div id="bg">
+	<div class="signup_box">
+		<%= image_tag('biketrainlogo.png') %>
+		<p>
+			Biketrains help bicyclists cycle social and cycle safer: meet at different points along a regular route and commute together, enjoying the company of your fellow cyclists and the visibility that numbers provide. Biketrains are designed for anyone who’d like a more social and safer way to commute by bike. Newer, less experienced riders who can gain confidence and learn safe cycling habits from more experienced bike commuters are especially welcome.   
+		</p>
+		<%= link_to "Join Now", signup_path, class: "btn btn-large btn-primary" if !signed_in?%>
+	</div>
 </div>
