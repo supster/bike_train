@@ -3,23 +3,47 @@
 	{
 		"selected_items":
 		[
+			[
+				"backg",
+				"background-size"
+			],
+			[
+				"o",
+				"opacity"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/controllers/application_controller.rb",
+			"file": "app/views/static_pages/home.html.erb",
 			"settings":
 			{
-				"buffer_size": 80,
+				"buffer_size": 703,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/users_controller.rb",
+			"file": "app/views/users/edit.html.erb",
 			"settings":
 			{
-				"buffer_size": 1169,
+				"buffer_size": 648,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/custom.css.scss",
+			"settings":
+			{
+				"buffer_size": 953,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 737,
 				"line_ending": "Unix"
 			}
 		}
@@ -48,6 +72,22 @@
 	},
 	"file_history":
 	[
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/assets/stylesheets/custom.css.scss",
+		"/Users/eindhara/Library/Application Support/Sublime Text 2/Packages/kuroir-SCSS.tmbundle-e1f4461/symbol list for scss.tmPreferences",
+		"/Users/eindhara/Library/Application Support/Sublime Text 2/Packages/User/Plain text.sublime-settings",
+		"/Users/eindhara/Documents/Rails_Projects/my_wishlist/app/views/vendors/show.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/views/static_pages/home.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/views/trips/new.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/views/layouts/_header.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/controllers/sessions_controller.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/helpers/application_helper.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/config/routes.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/controllers/trips_controller.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/controllers/application_controller.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/helpers/sessions_helper.rb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/views/users/new.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/ftgg/app/views/users/new.html.erb",
+		"/Users/eindhara/Documents/Rails_Projects/bike_train/app/controllers/users_controller.rb",
 		"/Users/eindhara/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
@@ -66,6 +106,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"home_street",
+			"sign_in",
+			">\n",
 			"class"
 		],
 		"highlight": true,
@@ -84,28 +127,55 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/application_controller.rb",
+					"file": "app/views/static_pages/home.html.erb",
 					"settings":
 					{
-						"buffer_size": 80,
+						"buffer_size": 703,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								80,
-								80
+								36,
+								43
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/users/edit.html.erb",
+					"settings":
+					{
+						"buffer_size": 648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								363,
+								363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -120,26 +190,53 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "app/controllers/users_controller.rb",
+					"buffer": 2,
+					"file": "app/assets/stylesheets/custom.css.scss",
 					"settings":
 					{
-						"buffer_size": 1169,
+						"buffer_size": 953,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								5
+								455,
+								455
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"syntax": "Packages/kuroir-SCSS.tmbundle-e1f4461/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								519,
+								519
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -178,7 +275,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.477135776484,
 			1.0
 		],
 		"rows":
@@ -198,6 +295,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"custom",
+				"app/assets/stylesheets/custom.css.scss"
+			],
+			[
+				"user/new",
+				"app/views/users/new.html.erb"
+			]
 		],
 		"width": 0.0
 	},
@@ -212,7 +317,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
-	"side_bar_width": 150.0,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
 	"status_bar_visible": true
 }
