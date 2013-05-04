@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
 
   has_many :groupMemberships
-  has_many :groups :through => :groupMemberships
+  has_many :groups, :through => :groupMemberships
 
   has_secure_password
 
