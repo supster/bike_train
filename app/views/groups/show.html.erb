@@ -1,0 +1,8 @@
+<% provide(:title, @group.name)%>
+<h1>
+	<%= @group.name %>
+</h1>
+Trip Origin:	
+<%= render "shared/show_address", address: @origin_address %>	
+Trip Destination:
+<%= render "shared/show_address", address: @destination_address %>	
