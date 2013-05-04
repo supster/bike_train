@@ -16,10 +16,8 @@
 			<%= f.label :password_confirmation, "Confirmation" %>
 			<%= f.password_field :password_confirmation %>
 			
-			<%= f.label :address %>
-			<%= f.password_field :address %>
-
 			<%= f.submit "Save changes", class: "btn btn-medium btn-primary" %>
 		<% end %>
 	</div>
 </div>
+<%= render "shared/edit_address" %>
