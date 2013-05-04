@@ -13,13 +13,13 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6}
   validates :password_confirmation, presence: true
 
-  has_attached_file :photo, style: { small: "150x150<"},
-   					:url  => "/assets/users/:id/:style/:basename.:extension",
-                  	:path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+  has_attached_file :photo, styles: { small: "120x120<" },
+                    default_url: "/assets/missing120x120.png",
+   					        url: "/assets/users/:id/:style/:basename.:extension",
+                  	path: ":rails_root/public/assets/users/:id/:style/:basename.:extension"
 
-  validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 3.megabytes
-  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
 
   private 
   def create_remember_token

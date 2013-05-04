@@ -2,5 +2,12 @@
 <h1>
 	<%= @user.name %>
 </h1>
-<%= image_tag @user.photo.url %>
+<div class="row">
+	<div class="span2">
+		<%= image_tag @user.photo.url(:small), size: "120x120" %>
+	</div>
+	<div class="span10">
+		Email: <%= @user.email %>
+	</div>
+</div>
 
