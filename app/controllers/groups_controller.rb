@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
 
 	def index
     	@groups = Group.paginate(page: params[:page])
-    	@new_group = Group.new
   	end
 
   	def new
@@ -10,9 +9,13 @@ class GroupsController < ApplicationController
   	end
 
   	def create
-	    @group = Group.new(params[:new_group])
-	    @user = current_user
+	    @group = Group.new(params[:group])
+	    logger.info @group
+	    logger.info 'Printing users'
+	    logger.info current_user
+	    @group.users << current_user
 	    if @group.save
+	      
 	      flash[:success] = "Awesome, your a group owner!"
 	      redirect_to @group
 	    else

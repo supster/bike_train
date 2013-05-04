@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  attr_accessible :destination, :origin_address_id
+  attr_accessible :name, :description, :destination, :origin_address_id
   has_many :groupMemberships
-  has_many :users, :through => :groupMemberships
+  has_many :users, :through => :groupMemberships 
 end
