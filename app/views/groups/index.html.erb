@@ -1,0 +1,23 @@
+<% provide(:title, "Groups")%>
+<h1>Groups</h1>
+
+<%= will_paginate %>
+
+<div class="row">
+	<div class="span8">
+		<ul class="users">
+		<% @groups.each do |group| %>
+			<li>
+				<%= link_to group.name, group %>
+			</li>
+		<% end %>
+		</ul>
+	</div>
+
+	<div class="span4">
+		<%= link_to "Create Group", new_group_path, class: "btn btn-large btn-primary"%>
+	</div>
+</div>
+
+<%= will_paginate %>
+
