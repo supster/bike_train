@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :photo
 
   has_many :groupMemberships
   has_many :groups, :through => :groupMemberships
@@ -15,4 +15,17 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }   
   validates :password, presence: true, length: { minimum: 6}
   validates :password_confirmation, presence: true
+
+  has_attached_file :photo, style: { small: "150x150<"},
+   					:url  => "/assets/users/:id/:style/:basename.:extension",
+                  	:path => ":rails_root/public/assets/users/:id/:style/:basename.:extension"
+
+  #validates_attachment_presence :photo
+  validates_attachment_size :photo, :less_than => 3.megabytes
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
+
+  private 
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64  
+  end
 end
