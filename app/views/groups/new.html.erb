@@ -9,8 +9,31 @@
 		
 		<%= f.label :description %>
 		<%= f.text_field :description %>
-		
-		
+
+		Trip Origin:<br/>
+		<div>
+			<%= fields_for :origin_address, @origin_address do |fao| %>
+			      <%=fao.label :line_address, "Street" %>
+			      <%=fao.text_field :line_address, size: "100" %>
+			      <%=fao.label :city %><%=fao.text_field :city, size: "80" %>
+			      <%=fao.label :state %><%=fao.text_field :state, size: "3" %>
+			     <%=fao.label :zip %><%=fao.text_field :zip, size: "15" %>
+			<% end %>
+		</div>
+
+		Trip Destination:<br/>
+
+		<div>
+			<%= fields_for :destination_address, @destination_address do |fad| %>
+			      <%=fad.label :line_address, "Street" %>
+			      <%=fad.text_field :line_address, size: "100" %>
+			      <%=fad.label :city %><%=fad.text_field :city, size: "80" %>
+			      <%=fad.label :state %><%=fad.text_field :state, size: "3" %>
+			     <%=fad.label :zip %><%=fad.text_field :zip, size: "15" %>
+			<% end %>
+		</div>
+
+
 		<%= f.submit "Create Group", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
