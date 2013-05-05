@@ -1,15 +1,13 @@
-<%= render "shared/edit_address", address: @origin_address %>	
-<%= render "shared/edit_address", address: @destination_address %>		
-
-
 <% if !address.nil? %>
 <div>
-	<%= fields_for :address, address do |fa| %>
-	      <%=fa.label :line_address, "Street" %>
-	      <%=fa.text_field :line_address, size: "100" %>
-	      <%=fa.label :city %><%=fa.text_field :city, size: "80" %>
-	      <%=fa.label :state %><%=fa.text_field :state, size: "3" %>
-	     <%=fa.label :zip %><%=fa.text_field :zip, size: "15" %>
+	<%= fields_for :"#{name}_address", address do |fa| %>
+	    <%#=fa.label :line_address, "Location:" %>
+	    <%=fa.text_field :line_address, size: "100" %>
+	    <div style="display:none;">
+	    <%=fa.label :city %><%=fa.text_field :city, size: "80" %>
+	    <%=fa.label :state %><%=fa.text_field :state, size: "3" %>
+	    <%=fa.label :zip %><%=fa.text_field :zip, size: "15" %>
+	 	</div>
 	<% end %>
 </div>
 <% end %>
