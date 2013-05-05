@@ -5,13 +5,16 @@
 
 <div class="row">
 	<div class="span8">
-		<ul class="users">
+		<dl>
 		<% @groups.each do |group| %>
-			<li>
+			<dt>
 				<%= link_to group.name, group %>
-			</li>
+			</dt>
+			<dd>
+				<%= group.description %>
+			</dd>
 		<% end %>
-		</ul>
+		</dl>
 	</div>
 
 	<div class="span4">

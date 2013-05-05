@@ -202,21 +202,6 @@
 	    	
 		}
 		
-		if (home_or_work == "W"){
-			document.fcoor.form_dlat.value = latz;
-	    	document.fcoor.form_dlon.value = lonz;
-			document.fcoor.work_street.value=route;
-			if (street_number !=""){ document.fcoor.work_street.value=street_number+" "+route;}
-			document.fcoor.work_city.value=locality;
-			document.fcoor.work_state_prov.value=administrative_area_level_1;
-			document.fcoor.work_postal_zip.value=postal_code;
-			document.fcoor.work_country[country_index_number].selected=true;
-			
-			
-		}
-	
-
-
 	}
 
     </script>   
@@ -234,6 +219,10 @@
 				
 				<%= f.label :description %>
 				<%= f.text_area :description, rows: 4 %>
+
+				<%= f.fields_for :groupMemberships do |membership_form| %>
+					<%= membership_form.hidden_field :user_id, :value => current_user.id %>
+		    	<% end %>
 
 				Trip Origin:
 				<%= render "shared/edit_address", address: @origin_address, name: "origin" %>	
