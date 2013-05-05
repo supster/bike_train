@@ -5,6 +5,13 @@
 		<h3><%= image_tag current_user.photo.url(:small), size: "50x50" %>  Welcome Back, <%= current_user.name %>!</h3>
 
 		<%= link_to "Find a Group", groups_path, class: "btn btn-large btn-primary" if signed_in?%>		
-		<%= link_to "Start a Group", signup_path, class: "btn btn-large btn-primary" if signed_in?%>		
+		<%= link_to "Start a Group", signup_path, class: "btn btn-large btn-primary" if signed_in?%>	<br/><br/>
+
+	<%= form_tag :controller => 'groups', :action => 'search', :method => 'get' do %>
+	      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+	      <%= submit_tag "Search", :name => nil %> 
+	      <%= link_to_function "Clear", "$('search_field').clear()" %>
+	<% end %>
+
 	</div>
 </div>

@@ -34,4 +34,8 @@ class GroupsController < ApplicationController
  		@origin_address = Address.find(@group.origin_address_id)
   		@destination_address = Address.find(@group.destination_address_id)
   	end
+
+  	def search
+  		
+  	end
 end
