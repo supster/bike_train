@@ -10,6 +10,10 @@
 		<%= f.label :description %>
 		<%= f.text_field :description %>
 
+			<%= f.fields_for :groupMemberships do |membership_form| %>
+				<%= membership_form.hidden_field :user_id, :value => current_user.id %>
+	    	<% end %>
+
 		Trip Origin:<br/>
 		<div>
 			<%= fields_for :origin_address, @origin_address do |fao| %>
