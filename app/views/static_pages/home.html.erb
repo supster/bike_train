@@ -1,10 +1,24 @@
 <% provide(:title, 'Home')%>  
+<% provide(:hide_header, 'True')%>
+<div class="top_menu">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<nav>
+				<ul class="nav pull-right">
+					<li><%= link_to 'Sign In', 	signin_path%></li>
+				</ul>	
+			</nav>	
+		</div>
+	</div>
+</div>	
+
 <div id="bg">
 	<div class="signup_box">
-		<p><%= image_tag('biketraintext.png') %><br><br>
+		<p><%= image_tag('biketrainlogo.png') %><br><br>
 			helps bicyclists cycle social and cycle safer: meet at different points along a regular route and commute together, enjoying the company of your fellow cyclists and the visibility that numbers provide. <br><br>
 			Biketrains are designed for anyone who’d like a more social and safer way to commute by bike. Newer, less experienced riders who can gain confidence and learn safe cycling habits from more experienced bike commuters are especially welcome.   
 		</p>
+		<br>
 		<%= link_to "Let's roll!", signup_path, class: "btn btn-large btn-primary" if !signed_in?%>
 	</div>
 </div>

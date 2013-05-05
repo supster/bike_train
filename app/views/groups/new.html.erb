@@ -1,40 +1,251 @@
-<% provide(:title, 'New Group')%>
-<h1>New Group</h1>
-<div class="row">
-	<%= render "shared/error", error: @group  %>
-	<div class="span6 offset3">
-		<%= form_for(@group) do |f| %>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+<% provide(:title, 'Create Group')%>
+<% content_for :head do %>
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+   <script>
+	function initialize() {
+  		var mapOptions = {
+			    center: new google.maps.LatLng(40.697299, -73.979187),
+			    zoom: 10,
+			    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+		var map = new google.maps.Map(document.getElementById('map_canvas_origin'), mapOptions);
+
+  		var input = (document.getElementById('origin_address_line_address'));
+  		var autocomplete_origin = new google.maps.places.Autocomplete(input);
+
+  		var input = (document.getElementById('destination_address_line_address'));
+  		var autocomplete_dest = new google.maps.places.Autocomplete(input);
+
+  		autocomplete_origin.bindTo('bounds', map);
+  		autocomplete_dest.bindTo('bounds', map);
+
+		var infowindow = new google.maps.InfoWindow();
+		var marker = new google.maps.Marker({
+			map: map
+		});
+
+		google.maps.event.addListener(autocomplete_origin, 'place_changed', function() {
+			infowindow.close();
+			marker.setVisible(false);
+			input.className = '';
+			var place = autocomplete_origin.getPlace();
+			if (!place.geometry) {
+			  // Inform the user that the place was not found and return.
+			  input.className = 'notfound';
+			  return;
+			}
+
+			// If the place has a geometry, then present it on a map.
+			if (place.geometry.viewport) {
+			  map.fitBounds(place.geometry.viewport);
+			} else {
+			  map.setCenter(place.geometry.location);
+			  //map.setZoom(17);  // Why 17? Because it looks good.
+			}
+			marker.setIcon(/** @type {google.maps.Icon} */({
+			  url: place.icon,
+			  size: new google.maps.Size(71, 71),
+			  origin: new google.maps.Point(0, 0),
+			  anchor: new google.maps.Point(17, 34),
+			  scaledSize: new google.maps.Size(35, 35)
+			}));
+			marker.setPosition(place.geometry.location);
+			marker.setVisible(true);
+
+			var address = '';
+			if (place.address_components) {
+			  address = [
+			    (place.address_components[0] && place.address_components[0].short_name || ''),
+			    (place.address_components[1] && place.address_components[1].short_name || ''),
+			    (place.address_components[2] && place.address_components[2].short_name || '')
+			  ].join(' ');
+			}
+
+			infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+			infowindow.open(map, marker);
+		});
+
+		google.maps.event.addListener(autocomplete_dest, 'place_changed', function() {
+			infowindow.close();
+			marker.setVisible(false);
+			input.className = '';
+			var place = autocomplete_dest.getPlace();
+			if (!place.geometry) {
+			  // Inform the user that the place was not found and return.
+			  input.className = 'notfound';
+			  return;
+			}
+
+			// If the place has a geometry, then present it on a map.
+			if (place.geometry.viewport) {
+			  map.fitBounds(place.geometry.viewport);
+			} else {
+			  map.setCenter(place.geometry.location);
+			  //map.setZoom(17);  // Why 17? Because it looks good.
+			}
+			marker.setIcon(/** @type {google.maps.Icon} */({
+			  url: place.icon,
+			  size: new google.maps.Size(71, 71),
+			  origin: new google.maps.Point(0, 0),
+			  anchor: new google.maps.Point(17, 34),
+			  scaledSize: new google.maps.Size(35, 35)
+			}));
+			marker.setPosition(place.geometry.location);
+			marker.setVisible(true);
+
+			var address = '';
+			if (place.address_components) {
+			  address = [
+			    (place.address_components[0] && place.address_components[0].short_name || ''),
+			    (place.address_components[1] && place.address_components[1].short_name || ''),
+			    (place.address_components[2] && place.address_components[2].short_name || '')
+			  ].join(' ');
+			}
+
+			infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+			infowindow.open(map, marker);
+		});
+
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+	function update_form_lat_lon_address(home_or_work,place){
+		var latz = place.geometry.location.lat();
+      	var lonz = place.geometry.location.lng();
+    	var administrative_area_level_1="";
+		var administrative_area_level_2="";
+		var administrative_area_level_3="";
+		var street_address ="";
+		var route="";
+		var street_number="";
+		var country="";
+		var intersection="";
+		var locality="";
+		var sublocality="";
+		var postal_code="";
+		var neighborhood="";
+		var premise="";
+		var point_of_interest="";
+		var natural_feature="";
+		var establishment="";
+		var i=0;
+      	 	
+        for(var j=0;j < place.address_components.length; j++){
+       	
+            for(var k=0; k < place.address_components[j].types.length; k++){
+   
+                if(place.address_components[j].types[k] == "point_of_interest"){
+                   point_of_interest = place.address_components[j].point_of_interest;
+                   }    
+
+                if(place.address_components[j].types[k] == "premise"){
+                   premise = place.address_components[j].premise;
+                   }                             	                	
+                if(place.address_components[j].types[k] == "postal_code"){
+                   postal_code = place.address_components[j].short_name;
+                   }
+                if(place.address_components[j].types[k] == "street_address"){
+                    street_address = place.address_components[j].long_name;
+                   } 
+                if(place.address_components[j].types[k] == "route"){
+                    route = place.address_components[j].long_name;
+                   }  
+                if(place.address_components[j].types[k] == "street_number"){
+                    street_number = place.address_components[j].long_name;
+                   }    
+                if(place.address_components[j].types[k] == "intersection"){
+                    intersection = place.address_components[j].long_name;
+                   }         
+                if(place.address_components[j].types[k] == "administrative_area_level_1"){
+                    administrative_area_level_1 = place.address_components[j].short_name;
+                   }  
+                if(place.address_components[j].types[k] == "locality"){
+                    locality = place.address_components[j].long_name;
+                   }     
+                if(place.address_components[j].types[k] == "sublocality"){
+                    sublocality = place.address_components[j].long_name;
+                   }      
+                if(place.address_components[j].types[k] == "administrative_area_level_2"){
+                    administrative_area_level_2 = place.address_components[j].long_name;
+                   }   
+                   
+                   if(place.address_components[j].types[k] == "administrative_area_level_3"){
+                    administrative_area_level_3 = place.address_components[j].long_name;
+                   }   
+               
+                if(place.address_components[j].types[k] == "neighborhood"){
+                    neighborhood = place.address_components[j].long_name;
+                   }  
+                
+                if(place.address_components[j].types[k] == "country"){
+                    country = place.address_components[j].short_name;
+                   }         
+            }
+        }
+            
+            
+		var return_country=country;
+		var country_index_number=0; 
+		country_index_number=find_country_in_array(countryArray, return_country);
+            
+
+		if (home_or_work == "H"){
+			document.fcoor.form_olat.value = latz;
+	    	document.fcoor.form_olon.value = lonz;
+	    	document.fcoor.home_street.value=route;
+	   		if (street_number !=""){ document.fcoor.home_street.value=street_number+" "+route;}
+	    	document.fcoor.home_city.value=locality;
+	    	document.fcoor.home_state_prov.value=administrative_area_level_1;
+	    	document.fcoor.home_postal_zip.value=postal_code;
+	    	document.fcoor.home_country[country_index_number].selected=true;
+	    	
+		}
 		
-		<%= f.label :description %>
-		<%= f.text_field :description %>
+		if (home_or_work == "W"){
+			document.fcoor.form_dlat.value = latz;
+	    	document.fcoor.form_dlon.value = lonz;
+			document.fcoor.work_street.value=route;
+			if (street_number !=""){ document.fcoor.work_street.value=street_number+" "+route;}
+			document.fcoor.work_city.value=locality;
+			document.fcoor.work_state_prov.value=administrative_area_level_1;
+			document.fcoor.work_postal_zip.value=postal_code;
+			document.fcoor.work_country[country_index_number].selected=true;
+			
+			
+		}
+	
 
-		Trip Origin:<br/>
-		<div>
-			<%= fields_for :origin_address, @origin_address do |fao| %>
-			      <%=fao.label :line_address, "Street" %>
-			      <%=fao.text_field :line_address, size: "100" %>
-			      <%=fao.label :city %><%=fao.text_field :city, size: "80" %>
-			      <%=fao.label :state %><%=fao.text_field :state, size: "3" %>
-			     <%=fao.label :zip %><%=fao.text_field :zip, size: "15" %>
-			<% end %>
+
+	}
+
+    </script>   
+
+<% end %> 
+<h1>Create New Group</h1>
+<div class="row">
+	<div class="span12">
+		<div class="row">
+			<div class="span6">
+				<%= render "shared/error", error: @group  %>
+				<%= form_for(@group) do |f| %>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+				
+				<%= f.label :description %>
+				<%= f.text_area :description, rows: 4 %>
+
+				Trip Origin:
+				<%= render "shared/edit_address", address: @origin_address, name: "origin" %>	
+				Trip Destination:
+				<%= render "shared/edit_address", address: @destination_address, name: "destination" %>	
+
+				<%= f.submit "Create Group", class: "btn btn-large btn-primary" %>
+				<% end %>
+			</div>
+			<div class="span6">
+				<div id="map_canvas_origin" class="trip_map_canvas"></div>
+			</div>
 		</div>
-
-		Trip Destination:<br/>
-
-		<div>
-			<%= fields_for :destination_address, @destination_address do |fad| %>
-			      <%=fad.label :line_address, "Street" %>
-			      <%=fad.text_field :line_address, size: "100" %>
-			      <%=fad.label :city %><%=fad.text_field :city, size: "80" %>
-			      <%=fad.label :state %><%=fad.text_field :state, size: "3" %>
-			     <%=fad.label :zip %><%=fad.text_field :zip, size: "15" %>
-			<% end %>
-		</div>
-
-
-		<%= f.submit "Create Group", class: "btn btn-large btn-primary" %>
-		<% end %>
 	</div>
 </div>

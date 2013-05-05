@@ -4,7 +4,8 @@ Ftgg::Application.routes.draw do
   resources :trips 
   resources :groups
 
-  root to: 'static_pages#home'
+  match '/home', to: 'static_pages#home'
+  root to: 'static_pages#dashboard'
 
   match '/signup',    to: 'users#new'
   match '/signin',    to: 'sessions#new'
