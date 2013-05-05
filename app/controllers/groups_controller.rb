@@ -2,9 +2,12 @@ class GroupsController < ApplicationController
 
 	def index
     	@groups = Group.paginate(page: params[:page])
+    	@addresses = Address.all
     	respond_to do |format|
       		format.html 
-      		format.json { render json: @groups }
+      		format.json { render :json => {:groups => @groups,
+      										:addresses => @addresses}
+      					 }
     	end
   	end
 
