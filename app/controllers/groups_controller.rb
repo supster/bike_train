@@ -53,12 +53,15 @@ class GroupsController < ApplicationController
 
   	def show
    		@group = Group.find(params[:id])
- 		@origin_address = Address.find(@group.origin_address_id)
-  		@destination_address = Address.find(@group.destination_address_id)
+ 		@origin_address = Address.find(14)
+  		@destination_address = Address.find(15)
 
   		respond_to do |format|
 	      format.html # show.html.erb
-	      format.json { render json: @group }
+	      format.json { render :json => {:group => @group,
+	      									:origin_address => @origin_address,
+	      									:destination_address => @destination_address}
+	      								}
 	    end
   	end
 end
