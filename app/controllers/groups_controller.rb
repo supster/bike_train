@@ -2,6 +2,10 @@ class GroupsController < ApplicationController
 
 	def index
     	@groups = Group.paginate(page: params[:page])
+    	respond_to do |format|
+      		format.html 
+      		format.json { render json: @groups }
+    	end
   	end
 
   	def new
@@ -10,12 +14,15 @@ class GroupsController < ApplicationController
   		@destination_address = Address.new
   		@group.users.build
   		@group.groupMemberships.build
+
+  		respond_to do |format|
+      		format.html 
+      		format.json { render json: @group }
+    	end
   	end
 
   	def create
 	    @group = Group.new(params[:group])
-
-	    #@group.users << User.find(current_user.id)
 	   	
 	   	@origin_address = Address.create(params[:origin_address])
 		@destination_address = Address.create(params[:destination_address])
@@ -23,6 +30,7 @@ class GroupsController < ApplicationController
 	    @group.origin_address_id = @origin_address.id
 	    @group.destination_address_id = @destination_address.id
 
+=begin
 	    if @group.save
 	      
 	      flash[:success] = "Awesome, your a group owner!"
@@ -30,12 +38,28 @@ class GroupsController < ApplicationController
 	    else
 	      render "new"      
 	    end
+=end
+
+	    respond_to do |format|
+	    	if @group.save
+		        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+		        format.json { render json: @group, status: :created, location: @group }
+		    else
+		        format.html { render action: "new" }
+		        format.json { render json: @group.errors, status: :unprocessable_entity }
+		    end
+	    end
   	end
 
   	def show
    		@group = Group.find(params[:id])
  		@origin_address = Address.find(@group.origin_address_id)
   		@destination_address = Address.find(@group.destination_address_id)
+
+  		respond_to do |format|
+	      format.html # show.html.erb
+	      format.json { render json: @group }
+	    end
   	end
 
   	def search
