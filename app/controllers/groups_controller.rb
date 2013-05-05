@@ -15,9 +15,6 @@ class GroupsController < ApplicationController
   	def create
 	    @group = Group.new(params[:group])
 
-	    logger.info @group
-	    logger.info 'Printing users'
-	    logger.info current_user
 	    #@group.users << User.find(current_user.id)
 	   	
 	   	@origin_address = Address.create(params[:origin_address])
